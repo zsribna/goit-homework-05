@@ -21,7 +21,7 @@
             <nav class="header-navigation">
                 <a href="./index.html" class="list_item header_logo"><span class="header_span">Web</span>Studio</a>
                 <ul class="list_osn">
-                    <li class="list_item"><a class="header_link" href="">Studio</a></li>
+                    <li class="list_item"><a class="header_link link-current" href="">Studio</a></li>
                     <li class="list_item"><a class="header_link" href="porfolio.html">Portfolio</a></li>
                     <li class="list_item"><a class="header_link" href="">Contacts</a></li>
                 </ul>
@@ -39,7 +39,7 @@
         <section class="hero_title">
             <div class="container">
                 <h1 class="fon_text">Effective Solutions for Your Business</h1>
-                <button class="fon_btn " type="button"> Order Service </button>
+                <button class="fon_btn " type="button"  data-modal-open> Order Service </button>
             </div>
         </section>
         <section class="section">
@@ -332,5 +332,20 @@
             </div>  
         </div>
     </footer>
+    <!--Modal window-->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-button" data-modal-close>
+                <svg class="" width="8" height="8">
+                    <use href="./images/symbol-defs.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
