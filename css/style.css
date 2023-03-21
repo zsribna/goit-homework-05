@@ -247,7 +247,8 @@ img {
     padding: 16px 32px;
     margin-top: 48px;
     color: var(--white-color);
-    background-color:var(--accent-color); ;
+    background-color:var(--accent-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .fon_btn:hover {
@@ -400,6 +401,7 @@ img {
     justify-content: center;
     align-items: center;
     background-color: var(--accent-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .section-soc-link:hover{
@@ -445,6 +447,7 @@ img {
     justify-content: center;
     align-items: center;
     padding: 16px 32px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-company-link {
     fill: currentColor;
@@ -546,6 +549,7 @@ img {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:is(:hover, :focus) {
@@ -576,6 +580,7 @@ img {
     border-radius: 4px;
     color: var(--accent-color);
     background-color: var(--secondary-background-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list_button_element:hover{
     color: var(--white-color);
