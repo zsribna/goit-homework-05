@@ -579,6 +579,7 @@ img {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:is(:hover, :focus) {
@@ -609,6 +610,10 @@ img {
     border-radius: 4px;
     color: var(--accent-color);
     background-color: var(--secondary-background-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list_button_element:hover {
@@ -640,7 +645,9 @@ img {
 
 .gallery2 {
     padding: 32px 0 32px 16px;
-    border: 1px solid var(--second-btn-color);
+    border-left: 1px solid #e7e9fc;
+    border-right: 1px solid #e7e9fc;
+    border-bottom: 1px solid #e7e9fc;
 }
 
 .section-title2 {
@@ -701,60 +708,76 @@ img {
     color: var(--secondary-background-color);
 }
 
-
-/*Modal window*/
+/* ----------------Modal----------------- */
 .backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(46, 47, 66, 0.4);
 
-    transition: opacity 300ms linear, visibility 300ms linear;
+    opacity: 1;
+    visibility: visible;
+
+    transition: opacity 250ms var(--action), visibility 250ms var(--action);
 }
 
-.is-hidden {
+.backdrop.is-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
 
-.backdrop .is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0);
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
+
     width: 408px;
     height: 576px;
-    padding: 15px;
-    background-color: #FCFCFC;
-    border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    opacity: 1;
-    transition: transform 300ms linear;
+    border-radius: 4px;
+
+    background-color: var(--white-color);
+
+    transform: translate(-50%, -50%) scale(1);
+
+    transition: transform 250ms var(--action);
 }
 
-.modal-button {
-    cursor: pointer;
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: block;
     width: 24px;
     height: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    color: var(--blue-color);
+    background-color: rgba(231, 233, 252, 0.1);
+    border: 1px solid rgba(46, 47, 66, 0.1);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--second-btn-color);
-    margin-left: auto;
-    padding: 0;
+
+    transition: background-color 250ms var(--action), color 250ms var(--action);
 }
 
-.modal-button:hover,
-.modal-button:focus {
+.modal-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    fill: currentColor;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
     background-color: var(--variable-color);
     color: var(--white-color);
     border-color: transparent;
